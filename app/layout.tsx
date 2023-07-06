@@ -1,11 +1,38 @@
 "use client"
 import "./global.css"
+import localFont from "next/font/local"
 import { useCallback } from "react"
 import Particles from "react-particles"
 import type { Container, Engine } from "tsparticles-engine"
 import { loadFull } from "tsparticles"
 import StyledComponentsRegistry from "@/lib/registry"
 import { BottomPartnersLogos } from "@/features/bottom-partners-logos"
+
+const gilroyFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/Gilroy-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Gilroy-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Gilroy-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Gilroy-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gilroy",
+})
 
 export default function RootLayout({
   children,
@@ -23,7 +50,7 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
-      <body>
+      <body className={gilroyFont.variable}>
         <StyledComponentsRegistry>
           <Particles
             init={particlesInit}

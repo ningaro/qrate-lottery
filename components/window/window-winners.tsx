@@ -7,7 +7,7 @@ import { styled } from "styled-components"
 const WinnerUpperText = styled.h3`
   color: #fff;
   font-size: 1.5rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -18,7 +18,7 @@ const WinnerUpperText = styled.h3`
 const WinnerText = styled.h1`
   color: #fff;
   font-size: 6rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -27,7 +27,7 @@ const WinnerText = styled.h1`
 const WinnersText = styled.h1`
   color: #fff;
   font-size: 3rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
   font-weight: 700;
   line-height: normal;

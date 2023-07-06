@@ -6,9 +6,9 @@ export const WindowLink = styled(Link)`
   border: 0;
   border-radius: 16px 16px 0px 0px;
   font-size: 1.5rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 155%;
   background: #00a2ff;
   transition: all 0.1s linear;

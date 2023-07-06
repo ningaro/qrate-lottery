@@ -7,7 +7,7 @@ export const WindowButton = styled.button`
   border: 0;
   border-radius: 16px 16px 0px 0px;
   font-size: 1.5rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
   font-weight: 500;
   line-height: 155%;

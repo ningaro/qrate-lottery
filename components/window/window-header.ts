@@ -5,7 +5,7 @@ export const WindowHeader = styled.div`
   text-align: center;
   color: #fff;
   font-size: 1.5rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
   font-weight: 500;
   line-height: normal;

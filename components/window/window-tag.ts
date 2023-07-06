@@ -4,7 +4,7 @@ export const WindowTag = styled.div`
   color: #00a2ff;
   border: 0;
   font-size: 1.5rem;
-  font-family: Gilroy;
+  font-family: var(--font-gilroy);
   font-style: normal;
   font-weight: 500;
   line-height: 155%;

@@ -6,8 +6,8 @@ export const WindowRoot = styled.div`
   box-shadow: 4px 4px 26px 0px #00a2ff;
   backdrop-filter: blur(1rem);
   color: #fff;
-  width: 30rem;
-  height: 30rem;
+  width: 35rem;
+  height: 35rem;
   display: flex;
   flex-direction: column;
 `
