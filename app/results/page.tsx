@@ -1,31 +1,27 @@
+import { getDataNodeJS } from "@/lib/getDataNodeJS"
 import { ResultsBody } from "./body"
-
-async function getData(
-  minValue: number,
-  maxValue: number,
-  amount: number
-): Promise<number[]> {
-  const res = await fetch(
-    `https://qrate-lottery.vercel.app/api?minValue=${minValue}&maxValue=${maxValue}&amount=${amount}&isUnique=true`,
-    { cache: "no-store" }
-  )
-  if (!res.ok) {
-    throw new Error("Failed to fetch data")
-  }
-
-  return res.json()
-}
+import { getDataFromServer } from "@/lib/getDataFromServer"
 
 export default async function Results({
   searchParams,
 }: {
   searchParams: { [key: string]: number }
 }) {
+  const isProdMode = process.env.NEXT_PUBLIC_MODE === "prod"
   const minValue = searchParams["minValue"]
   const maxValue = searchParams["maxValue"]
   const amount = searchParams["amount"]
 
-  const data = await getData(minValue, maxValue, amount)
+  const data = isProdMode
+    ? await getDataFromServer(
+        process.env.SERVER || "",
+        minValue,
+        maxValue,
+        amount
+      )
+    : await getDataNodeJS(minValue, maxValue, amount)
+
+  console.log("data", data)
 
   return <ResultsBody data={data} />
 }
