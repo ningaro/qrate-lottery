@@ -1,42 +1,65 @@
 "use client"
 
-import { Block } from "@/components/block"
-import { MarqueeIcons } from "@/components/marquee-icons"
+import { Window } from "@/components/window"
 import { styled } from "styled-components"
+import { Input } from "@/components/input"
+import { useState } from "react"
+import { WindowLink } from "@/components/window/window-link"
 
-const Center = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
+const Spacer = styled.div`
+  flex: 1;
 `
-const Bottom = styled.div`
+
+const Inputs = styled.div`
+  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
+  gap: 2rem;
+  width: 40%;
+`
+
+const ButtonWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 `
 
 export default function Home() {
+  const [firstValue, setFirstValue] = useState<string>("")
+  const [lastValue, setLastValue] = useState<string>("")
+  const [amount, setAmount] = useState<string>("")
+
   return (
-    <div>
-      <Center>
-        <Block></Block>
-      </Center>
-      <Bottom>
-        <div style={{ position: "relative", width: "100%", height: "100px" }}>
-          <MarqueeIcons />
-          <MarqueeIcons delay={3} />
-          <MarqueeIcons delay={6} />
-          <MarqueeIcons delay={9} />
-          <MarqueeIcons delay={12} />
-          <MarqueeIcons delay={15} />
-        </div>
-      </Bottom>
-    </div>
+    <Window headerText="Квантовая лотерея">
+      <Spacer />
+      <Inputs>
+        <Input
+          inputTitle="Первый билет"
+          inputValue={firstValue}
+          inputUpdateValue={setFirstValue}
+        />
+        <Input
+          inputTitle="Последний билет"
+          inputValue={lastValue}
+          inputUpdateValue={setLastValue}
+        />
+        <Input
+          inputTitle="Количество призов"
+          inputValue={amount}
+          inputUpdateValue={setAmount}
+        />
+      </Inputs>
+      <ButtonWrapper>
+        <WindowLink
+          href={`/results?minValue=${firstValue}&maxValue=${lastValue}&amount=${amount}`}
+        >
+          Запуск
+        </WindowLink>
+      </ButtonWrapper>
+    </Window>
   )
 }

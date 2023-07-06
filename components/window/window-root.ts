@@ -1,7 +1,6 @@
-"use client"
 import styled from "styled-components"
 
-export const Block = styled.div`
+export const WindowRoot = styled.div`
   border-radius: 4rem;
   background: rgba(255, 255, 255, 0.01);
   box-shadow: 4px 4px 26px 0px #00a2ff;
@@ -9,4 +8,6 @@ export const Block = styled.div`
   color: #fff;
   width: 30rem;
   height: 30rem;
+  display: flex;
+  flex-direction: column;
 `

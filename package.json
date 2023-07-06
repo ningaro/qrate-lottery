@@ -1,6 +1,6 @@
 {
   "name": "qrate-lottery",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,10 +17,12 @@
     "next": "13.4.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-fast-marquee": "1.6.0",
     "react-particles": "2.10.1",
     "styled-components": "6.0.0-rc.3",
     "tsparticles": "2.10.1",
     "tsparticles-engine": "2.10.1",
-    "typescript": "5.1.0-beta"
+    "typescript": "5.1.0-beta",
+    "zustand": "4.3.9"
   }
 }
