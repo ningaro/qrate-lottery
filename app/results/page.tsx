@@ -6,7 +6,7 @@ async function getData(
   amount: number
 ): Promise<number[]> {
   const res = await fetch(
-    `http://localhost:3000/api?minValue=${minValue}&maxValue=${maxValue}&amount=${amount}&isUnique=true`,
+    `https://qrate-lottery.vercel.app/api?minValue=${minValue}&maxValue=${maxValue}&amount=${amount}&isUnique=true`,
     { cache: "no-store" }
   )
   if (!res.ok) {
