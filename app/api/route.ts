@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse } from 'next/server'
 
 function generateRandomNumbers(
   minValue: number,
@@ -8,7 +8,7 @@ function generateRandomNumbers(
 ): number[] {
   if (isUnique && amount > maxValue - minValue + 1) {
     throw new Error(
-      "Невозможно сгенерировать указанное количество уникальных чисел в заданном диапазоне."
+      'Невозможно сгенерировать указанное количество уникальных чисел в заданном диапазоне.'
     )
   }
 
@@ -36,14 +36,14 @@ function generateRandomNumbers(
 
 export async function GET(request: NextRequest) {
   const searchParams = new URL(request.url).searchParams
-  const minValue = searchParams.get("minValue") as number | null
-  const maxValue = searchParams.get("maxValue") as number | null
-  const amount = searchParams.get("amount") as number | null
-  const isUnique = searchParams.get("isUnique") as boolean | null
+  const minValue = searchParams.get('minValue') as number | null
+  const maxValue = searchParams.get('maxValue') as number | null
+  const amount = searchParams.get('amount') as number | null
+  const isUnique = searchParams.get('isUnique') as boolean | null
 
   if (minValue && maxValue && amount && isUnique)
     return NextResponse.json(
       generateRandomNumbers(minValue, maxValue, amount, true)
     )
-  return NextResponse.json({ error: "Random function parametrs error" })
+  return NextResponse.json({ error: 'Random function parametrs error' })
 }

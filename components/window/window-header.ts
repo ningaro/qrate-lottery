@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const WindowHeader = styled.div`
   padding: 1rem 0px;

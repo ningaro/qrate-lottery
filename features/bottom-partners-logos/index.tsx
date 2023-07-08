@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { Bottom } from "@/components/bottom"
-import { MarqueeImage } from "@/components/marquee-image"
+import { Bottom } from '@/components/bottom'
+import { MarqueeImage } from '@/components/marquee-image'
 
 export const BottomPartnersLogos = () => {
   return (

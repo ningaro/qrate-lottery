@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import Marquee from "react-fast-marquee"
-import styled from "styled-components"
+import Marquee from 'react-fast-marquee'
+import styled from 'styled-components'
 
 const ScrollingImage = styled.img`
   height: 2rem;
@@ -9,7 +9,7 @@ const ScrollingImage = styled.img`
 `
 
 interface MarqueeImageProps {
-  src: React.ComponentProps<"img">["src"]
+  src: React.ComponentProps<'img'>['src']
 }
 
 export const MarqueeImage = ({ src }: MarqueeImageProps) => {

@@ -1,14 +1,12 @@
-"use client"
+'use client'
 
-import { WindowButton } from "@/components/window/window-button"
-import { Window } from "@/components/window"
-import { WindowTag } from "@/components/window/window-tag"
-import { WindowWin } from "@/components/window/window-win"
-import { useEffect } from "react"
-import { useDefaultStore } from "@/stores/default"
-import { redirect } from "next/navigation"
-import { RedirectType } from "next/dist/client/components/redirect"
-import { WindowLink } from "@/components/window/window-link"
+import { useEffect } from 'react'
+import { WindowButton } from '@/components/window/window-button'
+import { Window } from '@/components/window'
+import { WindowTag } from '@/components/window/window-tag'
+import { WindowWin } from '@/components/window/window-win'
+import { useDefaultStore } from '@/stores/default'
+import { WindowLink } from '@/components/window/window-link'
 
 interface ResultsBodyProps {
   data: number[]

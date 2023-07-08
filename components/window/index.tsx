@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { WindowBody } from "./window-body"
-import { WindowHeader } from "./window-header"
-import { ReactNode } from "react"
-import { WindowRoot } from "./window-root"
-import styled from "styled-components"
+import { ReactNode } from 'react'
+import styled from 'styled-components'
+import { WindowBody } from './window-body'
+import { WindowHeader } from './window-header'
+import { WindowRoot } from './window-root'
 
 interface WindowProps {
   headerText?: string

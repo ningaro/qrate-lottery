@@ -1,6 +1,6 @@
-"use client"
-import { Dispatch, SetStateAction } from "react"
-import styled from "styled-components"
+'use client'
+import { Dispatch, SetStateAction } from 'react'
+import styled from 'styled-components'
 
 const Title = styled.div`
   color: #fff;

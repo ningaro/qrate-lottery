@@ -5,7 +5,7 @@ export async function getDataFromServer(
   amount: number
 ): Promise<number[]> {
   const myHeaders = new Headers()
-  myHeaders.append("Content-Type", "application/json")
+  myHeaders.append('Content-Type', 'application/json')
 
   const raw = JSON.stringify({
     min_value: minValue,
@@ -15,17 +15,17 @@ export async function getDataFromServer(
   })
 
   const requestOptions = {
-    method: "POST",
+    method: 'POST',
     headers: myHeaders,
     body: raw,
   }
 
   const res = await fetch(link, {
     ...requestOptions,
-    cache: "no-store",
+    cache: 'no-store',
   })
   if (!res.ok) {
-    throw new Error("Failed to fetch data")
+    throw new Error('Failed to fetch data')
   }
 
   return res.json()

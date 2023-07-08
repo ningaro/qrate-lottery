@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const WindowTag = styled.div`
   color: #00a2ff;

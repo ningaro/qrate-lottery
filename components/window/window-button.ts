@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const WindowButton = styled.button`
   color: var(--white, #fff);

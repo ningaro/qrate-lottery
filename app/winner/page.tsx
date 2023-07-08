@@ -1,15 +1,13 @@
-"use client"
+'use client'
 
-import { Window } from "@/components/window"
-import { styled } from "styled-components"
-import { WindowButton } from "@/components/window/window-button"
-import { WindowSmall } from "@/components/window-small"
-import Image from "next/image"
-import { useDefaultStore } from "@/stores/default"
-import { WindowTag } from "@/components/window/window-tag"
-import { WindowWin } from "@/components/window/window-win"
-import { WindowWinners } from "@/components/window/window-winners"
-import { WindowLink } from "@/components/window/window-link"
+import { styled } from 'styled-components'
+import Image from 'next/image'
+import { Window } from '@/components/window'
+import { WindowSmall } from '@/components/window-small'
+import { useDefaultStore } from '@/stores/default'
+import { WindowTag } from '@/components/window/window-tag'
+import { WindowWinners } from '@/components/window/window-winners'
+import { WindowLink } from '@/components/window/window-link'
 
 const ButtonWrapper = styled.div`
   flex: 1;

@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useDefaultStore } from "@/stores/default"
-import { useEffect, useMemo, useState } from "react"
-import { styled } from "styled-components"
+import { useEffect, useMemo } from 'react'
+import { styled } from 'styled-components'
+import { useDefaultStore } from '@/stores/default'
 
 const WinnerUpperText = styled.h3`
   color: #fff;
@@ -58,15 +58,20 @@ export const WindowWinners = () => {
   const resultsCropped = useMemo(() => {
     const { length } = results
 
-    return results.reduce((prev, cur) => {
-      let isUsed = false
-      return prev.map((arr) => {
-        if (arr.length < 3 && !isUsed) {
-          isUsed = true
-          return [...arr, cur]
-        } else return [...arr]
-      })
-    }, JSON.parse(JSON.stringify(new Array(Math.ceil(length / 3)).fill([]))) as Array<number>[])
+    return results.reduce(
+      (prev, cur) => {
+        let isUsed = false
+        return prev.map((arr) => {
+          if (arr.length < 3 && !isUsed) {
+            isUsed = true
+            return [...arr, cur]
+          } else return [...arr]
+        })
+      },
+      JSON.parse(
+        JSON.stringify(new Array(Math.ceil(length / 3)).fill([]))
+      ) as Array<number>[]
+    )
   }, [results])
 
   useEffect(() => {
@@ -84,7 +89,7 @@ export const WindowWinners = () => {
   }, [current, results, results.length, resultsCropped, setCurrent, setStack])
 
   useEffect(() => {
-    console.log("resultsCropped", resultsCropped)
+    console.log('resultsCropped', resultsCropped)
   }, [resultsCropped])
 
   return (

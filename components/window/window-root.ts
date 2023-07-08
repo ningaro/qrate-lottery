@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const WindowRoot = styled.div`
   border-radius: 4rem;

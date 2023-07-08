@@ -5,10 +5,10 @@ export async function getDataNodeJS(
 ): Promise<number[]> {
   const res = await fetch(
     `https://qrate-lottery.vercel.app/api?minValue=${minValue}&maxValue=${maxValue}&amount=${amount}&isUnique=true`,
-    { cache: "no-store" }
+    { cache: 'no-store' }
   )
   if (!res.ok) {
-    throw new Error("Failed to fetch data")
+    throw new Error('Failed to fetch data')
   }
 
   return res.json()

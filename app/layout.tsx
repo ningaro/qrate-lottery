@@ -1,37 +1,37 @@
-"use client"
-import "./global.css"
-import localFont from "next/font/local"
-import { useCallback } from "react"
-import Particles from "react-particles"
-import type { Container, Engine } from "tsparticles-engine"
-import { loadFull } from "tsparticles"
-import StyledComponentsRegistry from "@/lib/registry"
-import { BottomPartnersLogos } from "@/features/bottom-partners-logos"
+'use client'
+import './global.css'
+import localFont from 'next/font/local'
+import { useCallback } from 'react'
+import Particles from 'react-particles'
+import type { Engine } from 'tsparticles-engine'
+import { loadFull } from 'tsparticles'
+import StyledComponentsRegistry from '@/lib/registry'
+import { BottomPartnersLogos } from '@/features/bottom-partners-logos'
 
 const gilroyFont = localFont({
   src: [
     {
-      path: "../public/fonts/Gilroy-Regular.ttf",
-      weight: "400",
-      style: "normal",
+      path: '../public/fonts/Gilroy-Regular.ttf',
+      weight: '400',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/Gilroy-Medium.ttf",
-      weight: "500",
-      style: "normal",
+      path: '../public/fonts/Gilroy-Medium.ttf',
+      weight: '500',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/Gilroy-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
+      path: '../public/fonts/Gilroy-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/Gilroy-Bold.ttf",
-      weight: "700",
-      style: "normal",
+      path: '../public/fonts/Gilroy-Bold.ttf',
+      weight: '700',
+      style: 'normal',
     },
   ],
-  variable: "--font-gilroy",
+  variable: '--font-gilroy',
 })
 
 export default function RootLayout({
@@ -43,10 +43,7 @@ export default function RootLayout({
     await loadFull(engine)
   }, [])
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {},
-    []
-  )
+  const particlesLoaded = useCallback(async () => {}, [])
 
   return (
     <html lang="ru">
@@ -65,19 +62,19 @@ export default function RootLayout({
                   },
                 },
                 color: {
-                  value: "#ffffff",
+                  value: '#ffffff',
                 },
                 shape: {
-                  type: "circle",
+                  type: 'circle',
                   stroke: {
                     width: 0,
-                    color: "#000000",
+                    color: '#000000',
                   },
                   polygon: {
                     nb_sides: 5,
                   },
                   image: {
-                    src: "img/github.svg",
+                    src: 'img/github.svg',
                     width: 100,
                     height: 100,
                   },
@@ -99,17 +96,17 @@ export default function RootLayout({
                 line_linked: {
                   enable: true,
                   distance: 189.39543399174545,
-                  color: "#00a2ff",
+                  color: '#00a2ff',
                   opacity: 1,
                   width: 1,
                 },
                 move: {
                   enable: true,
                   speed: 6,
-                  direction: "right",
+                  direction: 'right',
                   random: false,
                   straight: false,
-                  out_mode: "out",
+                  out_mode: 'out',
                   bounce: false,
                   attract: {
                     enable: true,

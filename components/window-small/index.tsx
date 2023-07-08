@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { ReactNode } from "react"
-import { WindowRoot } from "./window-root"
+import { ReactNode } from 'react'
+import { WindowRoot } from './window-root'
 
 interface WindowProps {
   headerText?: string
@@ -10,11 +10,6 @@ interface WindowProps {
   isCentred?: boolean
 }
 
-export const WindowSmall = ({
-  headerText,
-  children,
-  isCentred = true,
-  isHeaderShow = true,
-}: WindowProps) => {
+export const WindowSmall = ({ children }: WindowProps) => {
   return <WindowRoot>{children}</WindowRoot>
 }
