@@ -24,5 +24,9 @@
     "tsparticles-engine": "2.10.1",
     "typescript": "5.1.0-beta",
     "zustand": "4.3.9"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "8.8.0",
+    "prettier": "3.0.0"
   }
 }
