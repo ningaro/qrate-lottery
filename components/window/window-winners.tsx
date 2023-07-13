@@ -84,13 +84,17 @@ export const WindowWinners = () => {
     }
   }, [current, results.length, resultsCropped, setCurrent, setStack])
 
+  // Init states
   useEffect(() => {
     updateDisplayingData()
+  }, [])
 
-    const switcher = setInterval(() => updateDisplayingData, 3000)
+  // Set interval
+  useEffect(() => {
+    const switcher = setInterval(() => updateDisplayingData(), 3000)
 
     return () => clearInterval(switcher)
-  }, [])
+  }, [updateDisplayingData])
 
   return (
     <WindowWinnersWrapper>
