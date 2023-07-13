@@ -76,13 +76,13 @@ export const WindowWinners = () => {
 
   useEffect(() => {
     const switcher = setInterval(() => {
-      setStack(
-        resultsCropped[Math.trunc((current < results.length ? current : 0) / 3)]
-      )
-
       if (current + 1 < results.length) {
         setCurrent(current + 1)
-      } else setCurrent(0)
+        setStack(resultsCropped[Math.trunc((current + 1) / 3)])
+      } else {
+        setCurrent(0)
+        setStack(resultsCropped[0])
+      }
     }, 3000)
 
     return () => clearInterval(switcher)
