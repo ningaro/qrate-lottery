@@ -1,12 +1,12 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { WindowButton } from '@/components/window/window-button'
 import { Window } from '@/components/window'
 import { WindowTag } from '@/components/window/window-tag'
 import { WindowWin } from '@/components/window/window-win'
 import { useDefaultStore } from '@/stores/default'
-import { WindowLink } from '@/components/window/window-link'
 
 interface ResultsBodyProps {
   data: number[]
@@ -17,6 +17,8 @@ export const ResultsBody = ({ data }: ResultsBodyProps) => {
   const setCurrent = useDefaultStore(({ setCurrent }) => setCurrent)
   const current = useDefaultStore(({ current }) => current)
   const results = useDefaultStore(({ results }) => results)
+
+  const route = useRouter()
 
   useEffect(() => {
     setResult(data)
@@ -30,17 +32,19 @@ export const ResultsBody = ({ data }: ResultsBodyProps) => {
         {current + 1} / {results.length}
       </WindowTag>
       <WindowWin num={results[current]} />
-      {current + 1 === results.length ? (
-        <WindowLink href="/winner">Дальше</WindowLink>
-      ) : (
+      {
         <WindowButton
-          onClick={() => {
-            setCurrent(current + 1)
-          }}
+          onClick={
+            current + 1 === results.length
+              ? () => route.push('/winner')
+              : () => {
+                  setCurrent(current + 1)
+                }
+          }
         >
           Дальше
         </WindowButton>
-      )}
+      }
     </Window>
   )
 }
