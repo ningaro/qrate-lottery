@@ -21,6 +21,9 @@ const InputField = styled.input`
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   width: 100%;
+  &:focus-visible {
+    outline: #00a2ff solid;
+  }
 `
 const InputRoot = styled.div`
   width: 100%;
