@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import { styled } from 'styled-components'
 import { useDefaultStore } from '@/stores/default'
 
@@ -74,19 +74,23 @@ export const WindowWinners = () => {
     )
   }, [results])
 
+  const updateDisplayingData = useCallback(() => {
+    if (current + 1 < results.length) {
+      setCurrent(current + 1)
+      setStack(resultsCropped[Math.trunc((current + 1) / 3)])
+    } else {
+      setCurrent(0)
+      setStack(resultsCropped[0])
+    }
+  }, [current, results.length, resultsCropped, setCurrent, setStack])
+
   useEffect(() => {
-    const switcher = setInterval(() => {
-      if (current + 1 < results.length) {
-        setCurrent(current + 1)
-        setStack(resultsCropped[Math.trunc((current + 1) / 3)])
-      } else {
-        setCurrent(0)
-        setStack(resultsCropped[0])
-      }
-    }, 3000)
+    updateDisplayingData()
+
+    const switcher = setInterval(() => updateDisplayingData, 3000)
 
     return () => clearInterval(switcher)
-  }, [current, results, results.length, resultsCropped, setCurrent, setStack])
+  }, [])
 
   return (
     <WindowWinnersWrapper>
