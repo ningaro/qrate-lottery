@@ -21,7 +21,5 @@ export default async function Results({
       )
     : await getDataNodeJS(minValue, maxValue, amount)
 
-  console.log('data', data)
-
   return <ResultsBody data={data} />
 }

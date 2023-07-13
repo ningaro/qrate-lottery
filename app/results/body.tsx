@@ -23,7 +23,6 @@ export const ResultsBody = ({ data }: ResultsBodyProps) => {
   useEffect(() => {
     setResult(data)
     setCurrent(0)
-    console.log(data)
   }, [data, setCurrent, setResult])
 
   return (

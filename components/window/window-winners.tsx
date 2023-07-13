@@ -88,10 +88,6 @@ export const WindowWinners = () => {
     return () => clearInterval(switcher)
   }, [current, results, results.length, resultsCropped, setCurrent, setStack])
 
-  useEffect(() => {
-    console.log('resultsCropped', resultsCropped)
-  }, [resultsCropped])
-
   return (
     <WindowWinnersWrapper>
       <WinnerUpperText>Победитель:</WinnerUpperText>
