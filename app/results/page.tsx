@@ -1,5 +1,6 @@
 import { getDataNodeJS } from '@/lib/getDataNodeJS'
 import { getDataFromServer } from '@/lib/getDataFromServer'
+import { writeToFile } from '@/lib/writeToFile'
 import { ResultsBody } from './body'
 
 export default async function Results({
@@ -20,6 +21,8 @@ export default async function Results({
         amount
       )
     : await getDataNodeJS(minValue, maxValue, amount)
+
+  writeToFile(data)
 
   return <ResultsBody data={data} />
 }
