@@ -7,8 +7,12 @@ export const writeToFile = (obj: any) => {
   const date = actualDate.toLocaleDateString('ru')
   const time = actualDate.toLocaleTimeString('ru')
 
-  appendFileSync(
-    `./log/${date.replaceAll('.', '-')}.txt`,
-    `[${date}, ${time}] - ${str}\n`
-  )
+  try {
+    appendFileSync(
+      `./log/${date.replaceAll('.', '-')}.txt`,
+      `[${date}, ${time}] - ${str}\n`
+    )
+  } catch (error) {
+    console.error('Error on saving results!', error)
+  }
 }
